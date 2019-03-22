@@ -1,0 +1,72 @@
+﻿<Window x:Class="NikitchenkoCSharp04.CreateEditUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NikitchenkoCSharp04"
+        mc:Ignorable="d"
+        Title="Create/Edit UserWindow" Height="649" Width="717.5">
+    <ScrollViewer Margin="0,0,0,4">
+        <Grid Width="543">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0" Margin="30">
+                <Grid Margin="0,0,0,91.5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0*" />
+                        <RowDefinition Height="113*" />
+                        <RowDefinition Height="0*" />
+                        <RowDefinition Height="61*" />
+                        <RowDefinition Height="0*" />
+                        <RowDefinition Height="92*" />
+                        <RowDefinition Height="0*" />
+                        <RowDefinition Height="140*" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="1" Grid.Column="0" FontSize="16" FontStyle="Italic" Margin="216,0,0,69.5"
+                           Foreground="Black"
+                           HorizontalAlignment="Left" Content="  Ім'я" Width="58"/>
+                    <TextBox Grid.Row="1" Grid.Column="0" Foreground="Black"
+                               TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
+                               TextAlignment="Center" VerticalAlignment="Center"
+                               FontSize="32" Margin="8,34,8,33"
+                               Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="46" />
+                    <Label Grid.Row="1" Grid.Column="0" FontSize="16" FontStyle="Italic" Margin="206,0,0,46"
+                           Foreground="Black"
+                           HorizontalAlignment="Left" Content="Прізвище" Grid.RowSpan="3" Height="44" VerticalAlignment="Bottom" Width="80"/>
+                    <TextBox Grid.Row="3" Grid.Column="0" Foreground="Black"
+                               TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
+                               TextAlignment="Center" VerticalAlignment="Center"
+                               FontSize="32" Margin="8,9,8,7.5"
+                               Text="{Binding Surname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="44" />
+                    <Label Grid.Row="5" Grid.Column="0" FontSize="16" FontStyle="Italic" Margin="216,0,0,60"
+                           Foreground="Black"
+                           HorizontalAlignment="Left" Width="58">
+                        Email
+                    </Label>
+                    <TextBox Grid.Row="5" Grid.Column="0" Foreground="Black"
+                             TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
+                             TextAlignment="Center" VerticalAlignment="Center"
+                             FontSize="32" Margin="8,32.5,8,13"
+                             Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="46" />
+                    <Label Grid.Row="7" Grid.Column="0" FontSize="16" FontStyle="Italic" Margin="180,0,0,165"
+                           Foreground="Black"
+                           HorizontalAlignment="Left" Content="Дата народження" Width="146"/>
+                    <Viewbox Grid.Row="7" Grid.Column="0" 
+                             HorizontalAlignment="Center" VerticalAlignment="Center" Margin="123,38,111,104" Width="232" Height="55">
+                        <DatePicker
+                            FirstDayOfWeek="Monday" Name="BirthDatePicker"
+                            SelectedDate="{Binding BirthDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }"
+                            Text="{Binding BirthDateText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" Height="24" Width="97"/>
+                    </Viewbox>
+                    <Button Grid.Row="7" Grid.Column="0" Margin="20,119,20,34" Command="{Binding RegisterCmd}">
+                        <TextBlock FontSize="30">
+                            Підтвердити
+                        </TextBlock>
+                    </Button>
+                </Grid>
+            </Grid>
+
+        </Grid>
+    </ScrollViewer>
+</Window>
