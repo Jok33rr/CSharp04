@@ -52,8 +52,8 @@ namespace NikitchenkoCSharp04
     [Serializable]
     public class User
     {
-        private const string DataFilepath = "database";
-        private const string UserFileTemplate = "p{0}.bin";
+        private const string DataFilepath = "userdata";
+        private const string UserFileTemplate = "user{0}.bin";
 
         public string Name { get; private set; }
 
@@ -382,7 +382,7 @@ namespace NikitchenkoCSharp04
                 "ukr.net",
                 "ukma.edu.ua",
                 "rambler.ru",
-                "nigmir.net", 
+                "bigmir.net", 
                 "meta.ua",
                 "list.ru",
                 "inbox.ru",
